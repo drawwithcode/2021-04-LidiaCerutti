@@ -1,7 +1,7 @@
 // Based on a tutorial by Marc Duiker, @marcduiker, August 2021.
 // YouTube: https://www.youtube.com/watch?v=M3wTNVICUTg
 // Also inpired by the Brightness Mirror video from The Coding Train: https://www.youtube.com/watch?v=rNqaw8LT2ZU
-// Implemented the key interactions and circles
+// Implemented the key interactions and stripes and squares
 
 const videoXResolution = 640;
 const videoYResolution = 480;
@@ -21,6 +21,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   video = createCapture(VIDEO);
   video.size(videoXResolution, videoYResolution);
+  //scale(-1, 1);
   video.hide();
   windowVideoRatio = windowWidth / video.width;
 }
@@ -79,7 +80,11 @@ function draw() {
   //stroke(51);
   text("Press SHIFT to get funky :D", windowWidth / 2, 60);
   text("Press OPTION/CONTROL to toggle/untoggle filters", windowWidth / 2, 90);
-  text("Move mouse left to right to hide", windowWidth / 2, 30);
+  text("Move mouse left to right to change dot size", windowWidth / 2, 30);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function changeColorMode() {
