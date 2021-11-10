@@ -1,7 +1,7 @@
 // Based on a tutorial by Marc Duiker, @marcduiker, August 2021.
 // YouTube: https://www.youtube.com/watch?v=M3wTNVICUTg
 // Also inpired by the Brightness Mirror video from The Coding Train: https://www.youtube.com/watch?v=rNqaw8LT2ZU
-// Implemented the key interactions and stripes and squares
+// Implemented the key interactions and circles
 
 const videoXResolution = 640;
 const videoYResolution = 480;
@@ -56,8 +56,7 @@ function draw() {
 
         noStroke();
         fill(newColor);
-        scale(-1, 1); //to make the lines and squares
-        rect(scaledX, scaledY, scaledPixelSize, scaledPixelSize);
+        circle(scaledX, scaledY, scaledPixelSize, scaledPixelSize);
       }
     }
   } else {
@@ -69,9 +68,9 @@ function draw() {
       videoYResolution * windowVideoRatio
     );
   }
-
+  //black background
   fill("black");
-  rect(0, 0, windowWidth, 80);
+  rect(0, 0, windowWidth, 120);
   fill("lightgreen");
   textAlign(CENTER);
   textFont("Helvetica");
